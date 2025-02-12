@@ -9,7 +9,6 @@ public class Two_Sum {
         // Call the function and store the result
         int[] answer = twoSum(nums, target);
         System.out.println(Arrays.toString(answer));
-
     }
 
     public static int[] twoSum(int[] nums, int target) {
