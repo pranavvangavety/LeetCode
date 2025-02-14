@@ -25,7 +25,6 @@ public class Roman_integer {
                 result += value;
             }
         }
-
         System.out.println(result);
     }
 }
