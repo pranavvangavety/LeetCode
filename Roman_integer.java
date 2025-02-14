@@ -5,7 +5,7 @@ public class Roman_integer {
     public static void main(String[] args) {
         String s = "IX";
 
-        //
+        //hashmap
         Map<Character, Integer> romanMap = new HashMap<>();
         romanMap.put('I', 1);
         romanMap.put('V', 5);
