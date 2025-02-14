@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class Roman_integer {
     public static void main(String[] args) {
-        String s = "IX"; // Example input
+        String s = "IX";
 
         // hashmap
         Map<Character, Integer> romanMap = new HashMap<>();
