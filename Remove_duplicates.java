@@ -12,7 +12,7 @@ public class Remove_duplicates {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 1, 2}; // Input array
+        int[] nums = {1, 2, 3, 3}; // Input array
 
         int k = removeDuplicates(nums); // Calls your implementation
         System.out.println(k);
