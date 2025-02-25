@@ -53,7 +53,6 @@ public class Convert_sorted_array_to_bst {
         while (result.get(result.size() - 1).equals("null")) {
             result.remove(result.size() - 1);
         }
-
         return result;
     }
 
