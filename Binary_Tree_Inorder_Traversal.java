@@ -31,6 +31,7 @@ public class Binary_Tree_Inorder_Traversal {
         return result;
     }
 
+
     public static void main(String[] args) {
         // Create the tree
         TreeNode root = new TreeNode(1);
