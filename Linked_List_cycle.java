@@ -36,6 +36,6 @@ public class Linked_List_cycle {
         head.next.next.next = new ListNode(-4);
         head.next.next.next.next = head.next; // Creates a cycle
 
-        System.out.println(hasCycle(head)); // Output: true
+        System.out.println(hasCycle(head));
     }
 }
