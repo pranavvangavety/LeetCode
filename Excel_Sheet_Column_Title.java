@@ -14,6 +14,6 @@ public class Excel_Sheet_Column_Title {
     }
 
     public static void main(String[] args){
-        System.out.println(convertToTitle(28));
+        System.out.println(convertToTitle(5));
     }
 }
