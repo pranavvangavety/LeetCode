@@ -9,12 +9,13 @@ public class palindrome {
     public static boolean ispalindrome(int x){
         int reversed = 0;
         int original = x;
-        while(x>0){
-            int digit = x%10;
+
+        while(original > 0){
+            int digit = original%10;
             reversed = reversed * 10 + digit;
-            x = x/10;
+            original = original/10;
         }
-        return reversed == original;
+        return x == reversed;
     }
 
 }
