@@ -3,18 +3,22 @@ import java.util.Arrays;
 public class Plus_one {
 
     public static int[] plusOne(int[] digits) {
-        for (int i = digits.length - 1; i >= 0; i--) {
-            digits[i] = digits[i] + 1;
-            if (digits[i] < 10) {
-                return digits;  // No carry, return the result
-            }
-            digits[i] = 0;  // Set to 0 and continue the carry
-        }
 
-        // If all digits were 9, we need a new array
-        int[] result = new int[digits.length + 1];
-        result[0] = 1;  // Set the first digit to 1, rest are 0 by default
+
+
+        for(int i = digits.length - 1; i>=0; i--){
+            digits[i]++;
+
+            if(digits[i] < 10){
+                return digits;
+            }else{
+                digits[i] = 0;
+            }
+        }
+        int[] result = new int[digits.length + 1]; // If all digits are 9
+        result[0] = 1;
         return result;
+
     }
 
     public static void main(String[] args) {
