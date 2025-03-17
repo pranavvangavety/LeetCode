@@ -12,7 +12,8 @@ public class Merge_Two_Sorted_Lists {
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2){
         ListNode dummy = new ListNode(-1);
         ListNode current = dummy;
-        while(l1 !=null && l2 != null){
+
+        while( l1 != null && l2 != null){
             if(l1.val < l2.val){
                 current.next = l1;
                 l1 = l1.next;
@@ -28,7 +29,7 @@ public class Merge_Two_Sorted_Lists {
             current.next = l2;
         }
 
-    return dummy.next;
+        return dummy.next;
     }
 
     static public ListNode arraytolinked(int[] arr){
