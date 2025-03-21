@@ -15,20 +15,18 @@ public class Binary_Tree_Inorder_Traversal {
         }
     }
 
-    private static void inorder(TreeNode node, List<Integer> list) {
-        if (node == null) {
-            return;
-        }
-
-        inorder(node.left, list);
-        list.add(node.val);
-        inorder(node.right, list);
-    }
-
     public static List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         inorder(root, result);
         return result;
+    }
+
+    public static void inorder(TreeNode node, List<Integer> result){
+        if(node!=null){
+            inorder(node.left, result);
+            result.add(node.val);
+            inorder(node.right, result);
+        }
     }
 
 
