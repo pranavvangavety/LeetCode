@@ -6,22 +6,19 @@ public class Convert_sorted_array_to_bst {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() {}
+//        TreeNode() {}
         TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
+
     }
 
-    public static TreeNode buildTree(int[] nums, int start, int end) {
-        if (start > end) return null;
-
-        int mid = (start + end) / 2;
+    public static TreeNode buildTree(int[] nums, int start, int end){
+        if(start > end){
+            return null;
+        }
+        int mid = (start + end)/2;
         TreeNode node = new TreeNode(nums[mid]);
-        node.left = buildTree(nums, start, mid - 1);
-        node.right = buildTree(nums, mid + 1, end);
+        node.left = buildTree(nums, start, mid-1);
+        node.right = buildTree(nums, mid+1, end);
         return node;
     }
 
