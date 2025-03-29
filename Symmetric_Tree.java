@@ -13,18 +13,21 @@ public class Symmetric_Tree {
         }
     }
 
-    private static boolean isMirror(TreeNode left, TreeNode right) {
-        if (left == null && right == null) return true;  // Both are null
-        if (left == null || right == null) return false; // Only one is null
-
-        return (left.val == right.val)
-                && isMirror(left.left, right.right)
-                && isMirror(left.right, right.left);
+    public static boolean isSymmetric(TreeNode root) {
+        if(root == null){
+            return true;
+        }
+        return isMirror(root.left, root.right);
     }
 
-    public static boolean isSymmetric(TreeNode root) {
-        if (root == null) return true;
-        return isMirror(root.left, root.right);
+    public static boolean isMirror(TreeNode left, TreeNode right){
+        if(left == null && right == null){
+            return true;
+        }
+        if(left == null || right == null){
+            return false;
+        }
+        return (left.val == right.val) && isMirror(left.left, right.right) && isMirror(left.right, right.left);
     }
 
     public static void main(String[] args) {
@@ -39,6 +42,6 @@ public class Symmetric_Tree {
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(3);
 
-        System.out.println(isSymmetric(root));  // Should print: true
+        System.out.println(isSymmetric(root));
     }
 }
