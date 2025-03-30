@@ -4,21 +4,21 @@ public class Balanced_Binary_Tree {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() {}
+//        TreeNode() {}
         TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
+//
     }
-    public static int height(TreeNode root){
+    public static boolean isBalanced(TreeNode root) {
+        return height(root) != -1;
+    }
 
-        int leftheight;
-        int rightheight;
+    public static int height(TreeNode root){
+        int leftheight, rightheight;
+
         if(root == null){
             return 0;
         }
+
         leftheight = height(root.left);
         if(leftheight == -1){
             return -1;
@@ -30,12 +30,9 @@ public class Balanced_Binary_Tree {
         if(Math.abs(leftheight - rightheight) > 1){
             return -1;
         }
-        return Math.max(leftheight, rightheight)  + 1;
+        return Math.max(leftheight, rightheight) + 1;
     }
 
-    public static boolean isBalanced(TreeNode root) {
-        return height(root) != -1;
-    }
     public static void main(String[] args){
 
         TreeNode root = new TreeNode(1);
