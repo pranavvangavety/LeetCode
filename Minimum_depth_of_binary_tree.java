@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Minimum_depth_of_binary_tree {
 
     public static class TreeNode {
@@ -9,23 +12,56 @@ public class Minimum_depth_of_binary_tree {
     }
 
     public static int minDepth(TreeNode root) {
+        // DFS
+
+//        if(root == null){
+//            return 0;
+//        }
+//        else if(root.left == null && root.right == null){
+//            return 1;
+//        }
+//        else if(root.left == null){
+//            return 1 + minDepth(root.right);
+//        }
+//        else if(root.right == null){
+//            return 1 + minDepth(root.left);
+//        }
+//
+//        int leftdepth = minDepth(root.left);
+//        int rightdepth = minDepth(root.right);
+//
+//        return 1 + Math.min(leftdepth, rightdepth);
+
+        // BFS
+
         if(root == null){
             return 0;
         }
-        else if(root.left == null && root.right == null){
-            return 1;
-        }
-        else if(root.left == null){
-            return 1 + minDepth(root.right);
-        }
-        else if(root.right == null){
-            return 1 + minDepth(root.left);
-        }
 
-        int leftdepth = minDepth(root.left);
-        int rightdepth = minDepth(root.right);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        int depth = 1;
 
-        return 1 + Math.min(leftdepth, rightdepth);
+        while(!queue.isEmpty()){
+            int levelsize = queue.size();
+
+            for(int i = 0; i < levelsize; i++){
+                TreeNode current = queue.poll();
+
+                if(current.left == null && current.right == null){
+                    return depth;
+                }
+
+                if(current.left != null){
+                    queue.offer(current.left);
+                }
+                if(current.right != null){
+                    queue.offer(current.right);
+                }
+            }
+            depth++;
+        }
+        return depth;
     }
 
 
